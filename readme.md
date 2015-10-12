@@ -1,6 +1,6 @@
-## CSCI E-15 Project 3 - Developer's Best Friend
+# CSCI E-15 Project 3 - Developer's Best Friend
 
-# Live URL
+## Live URL
 http://p3.dwa15.jdepasquale.com/
 
 ## Description
