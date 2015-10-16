@@ -11,7 +11,9 @@
         "rap2hpoutre/laravel-log-viewer": "^0.4.2",
         "badcow/lorem-ipsum": "^1.1",
         "fzaninotto/faker": "^1.5",
-        "vitorbari/image-to-color-palette": "^1.0"
+        "vitorbari/image-to-color-palette": "^1.0",
+        "laravelcollective/html": "^5.1",
+        "zeroclipboard/zeroclipboard": "^2.2"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",

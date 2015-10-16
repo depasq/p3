@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="favicon-rocket.ico">
   <title>
-     @yield('title','TEST')
+     @yield('title',"Developer's Best Friend")
   </title>
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css" type='text/css'>
   <link rel="stylesheet" href="css/side-menu.css" type='text/css'>
@@ -52,9 +52,6 @@
     </div>
 
     <div id="main">
-      <div class="header">
-            <h1>Developer's Best Friend</h1>
-      </div>
 
     <section>
         {{-- Main page content will be yielded here --}}

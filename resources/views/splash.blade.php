@@ -15,13 +15,17 @@ such as a page specific styesheets.
 
 
 @section('content')
+  <div class="header">
+      <h1>Developer's Best Friend</h1>
+  </div>
+
   <div class="content">
-        <p>Some useful tools for web development</p>
+        <p>A collection of useful generator tools for web development.</p>
         <div class="pure-controls">
-          <a class="button-xlarge pure-button" href="/lip">Lorem Ipsum</a>
-          <a class="pure-button" href="/user">User Generator</a>
-          <a class="pure-button" href="/colors">Color Palettes</a>
-          <a class="pure-button" href="/pwdgen">Password Generator</a>
+          <a class="pure-button" href="/lip">Lorem Ipsum</a>
+          <a class="pure-button" href="/user">Random User</a>
+          <a class="pure-button" href="/colors">Color Palette</a>
+          {{-- <a class="pure-button" href="/pwdgen">Password</a> --}}
         </div>
   </div>
 @stop

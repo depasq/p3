@@ -14,18 +14,21 @@
 Route::get('/', function () {
     return view('splash');
 });
-Route::get('/lip', function () {
-    return view('devbf/lip');
-});
-Route::get('/user', function () {
-    return view('devbf/user');
-});
-Route::get('/colors', function () {
-    return view('devbf/colors');
-});
+
+Route::get('/lip', 'LipController@getLip');
+
+Route::post('/lip', 'LipController@postLip');
+
+Route::get('/user', 'UserController@getUser');
+
+Route::post('/user', 'UserController@postUser');
+
+Route::get('/colors', 'ColorController@getColor');
+
+Route::post('/colors', 'ColorController@postColor');
+
 Route::get('/pwdgen', function () {
     return view('devbf/pwdgen');
 });
-//Route::get('test', 'MainController@getIndex');
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
