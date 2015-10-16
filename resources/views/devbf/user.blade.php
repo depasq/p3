@@ -23,7 +23,6 @@
     <div class="pure-u-1-3">
       Optional Includes:
       {!! Form::open(['url' => 'user', 'class' => 'pure-form pure-form-aligned'] ) !!}
-      <fieldset>
            <div class="pure-control-group">
             {!! Form::label('birthday', 'Birthday') !!}
             {!! Form::checkbox('birthday', 1) !!}
@@ -40,7 +39,6 @@
             {!! Form::submit('Generate User', ['class' => 'pure-button pure-button-primary']) !!}
           </div>
             {!! Form::close() !!}
-      </fieldset>
     </div>
 
     <div class="pure-u-1-2">
