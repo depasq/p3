@@ -25,7 +25,6 @@ such as a page specific styesheets.
 <div class="pure-g">
   <div class="pure-u-1-3">
     {!! Form::open(['url' => 'lip', 'class' => 'pure-form pure-form-aligned'] ) !!}
-    <fieldset>
         <div class="pure-control-group">
         {!! Form::label('numGraphs', 'Number of Paragraphs') !!}
         {!! Form::selectRange('numGraphs', 1,8, $numGraphs) !!}
@@ -38,7 +37,6 @@ such as a page specific styesheets.
         {!! Form::submit('Generate Text!', ['class' => 'pure-button pure-button-primary']) !!}
        </div>
         {!! Form::close() !!}
-    </fieldset>
     <button id="copy-button" class="pure-button pure-button-primary" data-clipboard-target="cbtext" title="Click to copy me.">Copy to Clipboard</button>
       <script src="js/ZeroClipboard.js"></script>
       <script src="js/copy.js"></script>

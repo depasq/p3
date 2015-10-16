@@ -22,7 +22,7 @@ class LipController extends Controller
     {
           // Validate the request data
           // This validation will prevent anyone from maliciously entering
-          // very large numbers into the field 
+          // very large numbers into the field
         $this->validate($request, [
             'numGraphs' => 'numeric|max:8',
             'numSent' => 'numeric|max:8'
@@ -35,11 +35,11 @@ class LipController extends Controller
         }
 
         if (isset($_POST)) {
-          $numGraphs = $_POST['numGraphs'];
-          $numSent = $_POST['numSent'];
+            $numGraphs = $_POST['numGraphs'];
+            $numSent = $_POST['numSent'];
         } else {
-          $numGraphs = 1;
-          $numSent = 2;
+            $numGraphs = 1;
+            $numSent = 2;
         }
 
         return view('devbf/lip')
