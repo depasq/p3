@@ -13,23 +13,25 @@ class UserController extends Controller
     public function getUser()
     {
         #Open the page with random user already there
-        $pic = 'https://randomuser.me/api/portraits/med/lego/'.rand(0, 9).'.jpg';
+        $pic = 'img/lego/'.rand(0, 9).'.jpg';
         $faker = Faker::create();
-        $name = $faker->firstName .' '. $faker->lastName;
-        $email = $faker->email;
-        $address = $faker->streetAddress.', '.$faker->city.', '.$faker->stateAbbr;
-        $phone = $faker->phoneNumber;
+        $userAr = array(
+          "Name" => $faker->firstName .' '. $faker->lastName,
+          "Email" => $faker->email,
+          "Address" => $faker->streetAddress.', '.$faker->city.', '.$faker->stateAbbr,
+          "Phone" => $faker->phoneNumber,
+          "Birthday" => 0,
+          "Employer" => 0,
+          "Phrase" => 0,
+        );
+
+        $json_string = json_encode($userAr, JSON_PRETTY_PRINT);
 
         #don't include any of the optional params by default
         return view('devbf/user')
           ->with('pic', $pic)
-          ->with('name', $name)
-          ->with('email', $email)
-          ->with('address', $address)
-          ->with('phone', $phone)
-          ->with('bday', 0)
-          ->with('emp', 0)
-          ->with('blurb', 0);
+          ->with('userAr', $userAr)
+          ->with('json', $json_string);
     }
 
     public function postUser(Request $request)
@@ -38,40 +40,36 @@ class UserController extends Controller
         $this->validate($request, [
             'birthday' => 'boolean',
             'company' => 'boolean',
-            'blurb' => 'boolean'
+            'phrase' => 'boolean'
         ]);
 
-        $pic = 'https://randomuser.me/api/portraits/med/lego/'.rand(0, 9).'.jpg';
+        $pic = 'img/lego/'.rand(0, 9).'.jpg';
         $faker = Faker::create();
-        $name = $faker->firstName .' '. $faker->lastName;
-        $email = $faker->email;
-        $address = $faker->streetAddress.', '.$faker->city.', '.$faker->stateAbbr;
-        $phone = $faker->phoneNumber;
+
+        $userAr = array(
+          "Name" => $faker->firstName .' '. $faker->lastName,
+          "Email" => $faker->email,
+          "Address" => $faker->streetAddress.', '.$faker->city.', '.$faker->stateAbbr,
+          "Phone" => $faker->phoneNumber,
+          "Birthday" => 'Null',
+          "Employer" => 'Null',
+          "Phrase" => 'Null',
+        );
 
         if ($request['birthday'] == 1) {
-            $bday = $faker->date($format = 'Y-m-d');
-        } else {
-            $bday = 0;
+            $userAr['Birthday'] = $faker->date($format = 'Y-m-d');
         }
         if ($request['company'] == 1) {
-            $emp = $faker->company;
-        } else {
-            $emp = 0;
+            $userAr['Employer'] = $faker->company;
         }
-        if ($request['blurb'] == 1) {
-            $blurb = $faker->catchPhrase;
-        } else {
-            $blurb = 0;
+        if ($request['phrase'] == 1) {
+            $userAr['Phrase'] = $faker->catchPhrase;
         }
+        $json_string = json_encode($userAr, JSON_PRETTY_PRINT);
 
         return view('devbf/user')
           ->with('pic', $pic)
-          ->with('name', $name)
-          ->with('email', $email)
-          ->with('address', $address)
-          ->with('phone', $phone)
-          ->with('bday', $bday)
-          ->with('emp', $emp)
-          ->with('blurb', $blurb);
+          ->with('userAr', $userAr)
+          ->with('json', $json_string);
     }
 }
