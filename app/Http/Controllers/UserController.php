@@ -20,9 +20,9 @@ class UserController extends Controller
           "Email" => $faker->email,
           "Address" => $faker->streetAddress.', '.$faker->city.', '.$faker->stateAbbr,
           "Phone" => $faker->phoneNumber,
-          "Birthday" => 0,
-          "Employer" => 0,
-          "Phrase" => 0,
+          "Birthday" => 'Null',
+          "Employer" => 'Null',
+          "Phrase" => 'Null',
         );
 
         $json_string = json_encode($userAr, JSON_PRETTY_PRINT);

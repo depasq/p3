@@ -5,9 +5,7 @@
 @stop
 
 {{--
-This `head` section will be yielded right before the closing </head> tag.
-Use it to add specific things that *this* View needs in the head,
-such as a page specific styesheets.
+Load dropzone custom css for this view to format the dropzone box.
 --}}
 @section('head')
 <link rel="stylesheet" href="css/dropzone.css">
@@ -40,30 +38,35 @@ such as a page specific styesheets.
 
     <div class="pure-u-1-2">
       Source Image: <br/><br/>
-      <img src= {!! $img !!} height='300' width='300' alt='Image'>
-    </div>
-  </div>
- <br />
-<hr class="rule">
-Color Palette:
-<br/>
-<div class="pure-g">
-  <div class="pure-u-1-1">
-      <div class="bar" style= {!! '"background-color: '.$colors[0].';"' !!}><br/>{!! $colors[0] !!}</div>
-      <div class="bar" style= {!! '"background-color: '.$colors[1].';"' !!}><br/>{!! $colors[1] !!}</div>
-      <div class="bar" style= {!! '"background-color: '.$colors[2].';"' !!}><br/>{!! $colors[2] !!}</div>
-      <div class="bar" style= {!! '"background-color: '.$colors[3].';"' !!}><br/>{!! $colors[3] !!}</div>
-      <div class="bar" style= {!! '"background-color: '.$colors[4].';"' !!}><br/>{!! $colors[4] !!}</div>
-  </div>
-</div>
+      {{--
+      Check for errors on file upload before assuming there's an image to display
+      --}}
+      @if(count($errors) > 0)
+          <h2> {!! $errors[0] !!} </h2>
+      @else
+              <img src= {!! $img !!} height='300' width='300' alt='Image'>
+            </div>
+          </div>
+         <br />
+        <hr class="rule">
+        Color Palette:
+        <br/>
+        <div class="pure-g">
+          <div class="pure-u-1-1">
+              <div class="bar" style= {!! '"background-color: '.$colors[0].';"' !!}><br/>{!! $colors[0] !!}</div>
+              <div class="bar" style= {!! '"background-color: '.$colors[1].';"' !!}><br/>{!! $colors[1] !!}</div>
+              <div class="bar" style= {!! '"background-color: '.$colors[2].';"' !!}><br/>{!! $colors[2] !!}</div>
+              <div class="bar" style= {!! '"background-color: '.$colors[3].';"' !!}><br/>{!! $colors[3] !!}</div>
+              <div class="bar" style= {!! '"background-color: '.$colors[4].';"' !!}><br/>{!! $colors[4] !!}</div>
+          </div>
+        </div>
+      @endif
 
 </div>
 
 @stop
 {{--
-This `body` section will be yielded right before the closing </body> tag.
-Use it to add specific things that *this* View needs at the end of the body,
-such as a page specific JavaScript files.
+Utilize dropzone js and the custom script to handle the file upload process
 --}}
 @section('body')
 <script src="js/dropzone.js"></script>

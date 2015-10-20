@@ -11,6 +11,7 @@ class LipController extends Controller
 {
     public function getLip()
     {
+      //The default view shows the user where text will appear
         $graphs = array(0 => 'Lorem Ipsum text will appear here.');
         return view('devbf/lip')
           ->with('graphs', $graphs)
@@ -33,7 +34,8 @@ class LipController extends Controller
         for ($x=0; $x < $request['numGraphs']; $x++) {
             array_push($graphs, $faker->paragraph($nb = $request['numSent']));
         }
-
+        // Using $_POST here to maintain user selected values after submitting
+        // the form. Otherwise reset to defaults. 
         if (isset($_POST)) {
             $numGraphs = $_POST['numGraphs'];
             $numSent = $_POST['numSent'];
