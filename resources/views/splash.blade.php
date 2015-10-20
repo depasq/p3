@@ -24,8 +24,8 @@ such as a page specific styesheets.
         <div class="pure-controls">
           <a class="pure-button" href="/lip">Lorem Ipsum</a>
           <a class="pure-button" href="/user">Random User</a>
+          <a class="pure-button" href="/pwdgen">Password</a>
           <a class="pure-button" href="/colors">Color Palette</a>
-          {{-- <a class="pure-button" href="/pwdgen">Password</a> --}}
         </div>
   </div>
 @stop

@@ -29,9 +29,9 @@ Route::post('/colors', 'ColorController@uploadFile');
 
 Route::get('/colorsU', 'ColorController@upload');
 
-Route::get('/pwdgen', function () {
-    return view('devbf/pwdgen');
-});
+Route::get('/pwdgen', 'PwdController@getPwd');
+
+Route::post('/pwdgen', 'PwdController@postPwd');
 
 if (App::environment('local')) {
     Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
