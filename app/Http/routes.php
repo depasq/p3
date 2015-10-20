@@ -23,9 +23,11 @@ Route::get('/user', 'UserController@getUser');
 
 Route::post('/user', 'UserController@postUser');
 
-Route::get('/colors', 'ColorController@getColor');
+Route::get('/colors', 'ColorController@index');
 
-Route::post('/colors', 'ColorController@postColor');
+Route::post('/colors', 'ColorController@uploadFile');
+
+Route::get('/colorsU', 'ColorController@upload');
 
 Route::get('/pwdgen', function () {
     return view('devbf/pwdgen');
