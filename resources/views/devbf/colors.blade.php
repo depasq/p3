@@ -40,7 +40,7 @@ such as a page specific styesheets.
 
     <div class="pure-u-1-2">
       Source Image: <br/><br/>
-      <img src= {!! $img !!} height=300px width=300px alt='Image'>
+      <img src= {!! $img !!} height='300' width='300' alt='Image'>
     </div>
   </div>
  <br />
