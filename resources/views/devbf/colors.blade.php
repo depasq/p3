@@ -84,9 +84,10 @@ Utilize dropzone js and the custom script to handle the file upload process
         Dropzone.options.myAwesomeDropzone = {
             paramName: "file", // The name that will be used to transfer the file
             maxFilesize: 3, // MB
+            acceptedFiles: "image/*",
             uploadMultiple: false,
-            addRemoveLinks: true,
-            success: function(file, resposne) {
+            addRemoveLinks: false,
+            success: function(file, done) {
             },
         };
 </script>
