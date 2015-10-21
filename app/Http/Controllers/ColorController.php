@@ -29,7 +29,6 @@ class ColorController extends Controller
         //catch this by checking that the array has at least 5 elements.
         //if not grab a new image and generate a new palette.
         if (count($colors) < 5) {
-            print "ads;lfasd;fjkl;adsjklfdskjafkjlsadkjflsadkjfkjadsjkfl";
             $randomImg = $faker->image($dir = './tmp', $width = 300, $height = 300);
             $palette->set_image_file($randomImg);
             $colors = $palette->get_palette();
@@ -43,7 +42,6 @@ class ColorController extends Controller
     {
         //This function handles the color palette generation after a file
         // has been uploaded via Dropzone
-
         $palette = new ColorPalette();
 
         //Use validation to make sure that a file has been uploaded before
