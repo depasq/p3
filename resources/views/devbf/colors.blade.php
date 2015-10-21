@@ -23,11 +23,11 @@ Load dropzone custom css for this view to format the dropzone box.
   <hr class="rule"/>
   <div class="pure-g">
     <div class="pure-u-1-2">
-      Use a random image: <br/><br/>
-      <a class="pure-button" href="/colors">Surprise me!</a><br/>
+      <h4>Use a random image:</h4>
+      <a class="pure-button" href="/colors">Surprise me!</a><br/><br/>
       <hr class="rule" style="width: 50%;">
 
-      Or upload your own picture: <br/><br/>
+      <h4>Or upload your own picture:</h4> [must be an image file less than 3MB in size] <br>
 
       <div class="container">
               <div class="dropzone" id="dropzoneFileUpload">
@@ -37,7 +37,7 @@ Load dropzone custom css for this view to format the dropzone box.
     </div>
 
     <div class="pure-u-1-2">
-      Source Image: <br/><br/>
+      <h4>Source Image:</h4>
       {{--
       Check for errors on file upload before assuming there's an image to display
       --}}

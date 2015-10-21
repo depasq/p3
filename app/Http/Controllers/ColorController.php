@@ -25,6 +25,15 @@ class ColorController extends Controller
         $palette->set_image_file($randomImg);
         $colors = $palette->get_palette();
 
+        //sometimes lorempixel provides a black image which breaks the tool.
+        //catch this by checking that the array has at least 5 elements.
+        //if not grab a new image and generate a new palette.
+        if (count($colors) < 5) {
+            print "ads;lfasd;fjkl;adsjklfdskjafkjlsadkjflsadkjfkjadsjkfl";
+            $randomImg = $faker->image($dir = './tmp', $width = 300, $height = 300);
+            $palette->set_image_file($randomImg);
+            $colors = $palette->get_palette();
+        }
         return view('devbf/colors')
           -> with('colors', $colors)
           -> with('img', $randomImg);
@@ -52,6 +61,7 @@ class ColorController extends Controller
         $randomImg = session('fileName');
         $palette->set_image_file($randomImg);
         $colors = $palette->get_palette();
+        //reset filename
         session(['fileName' => ""]);
         return view('devbf/colors')
           -> with('colors', $colors)
