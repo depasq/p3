@@ -35,12 +35,17 @@
             {!! Form::label('phrase', 'Phrase') !!}
             {!! Form::checkbox('phrase', 1) !!}
           </div>
+          <div class="pure-control-group">
+            {!! Form::label('numUsers', 'Number of Users') !!}
+            {!! Form::selectRange('numUsers', 1,5) !!}
+            <h4>Multiple users are displayed in 'Output JSON' box below</h4>
+          </div>
           <div class="pure-controls">
-            {!! Form::submit('Generate User', ['class' => 'pure-button pure-button-primary']) !!}
+            {!! Form::submit('Generate', ['class' => 'pure-button pure-button-primary']) !!}
           </div>
             {!! Form::close() !!}
+          <br/>
     </div>
-
 
     <div class="pure-u-1-2">
       <div class="UserBG">
@@ -48,22 +53,22 @@
             <img src = {!!$pic!!} width=200 alt="Headshot">
           </div>
             <ul class="links">
-              <li><i class="fa fa-user"></i>{!!$userAr['Name']!!}
+              <li><i class="fa fa-user"></i>{!!$userAr[0]['Name']!!}
               </li>
-              <li><i class="fa fa-envelope"></i>{!!$userAr['Email']!!}
+              <li><i class="fa fa-envelope"></i>{!!$userAr[0]['Email']!!}
               </li>
-              <li><i class="fa fa-home"></i>{!!$userAr['Address']!!}
+              <li><i class="fa fa-home"></i>{!!$userAr[0]['Address']!!}
               </li>
-              <li><i class="fa fa-phone"></i>{!!$userAr['Phone']!!}
+              <li><i class="fa fa-phone"></i>{!!$userAr[0]['Phone']!!}
               </li>
-              @if ($userAr['Birthday'] != 'Null')
-                <li><i class="fa fa-birthday-cake"></i>{!!$userAr['Birthday']!!}</li>
+              @if ($userAr[0]['Birthday'] != 'Null')
+                <li><i class="fa fa-birthday-cake"></i>{!!$userAr[0]['Birthday']!!}</li>
               @endif
-              @if ($userAr['Employer'] != 'Null')
-                <li><i class="fa fa-cog"></i>{!!$userAr['Employer']!!}</li>
+              @if ($userAr[0]['Employer'] != 'Null')
+                <li><i class="fa fa-cog"></i>{!!$userAr[0]['Employer']!!}</li>
               @endif
-              @if ($userAr['Phrase'] != 'Null')
-                <li><i class="fa fa-quote-right"></i>{!!$userAr['Phrase']!!}</li>
+              @if ($userAr[0]['Phrase'] != 'Null')
+                <li><i class="fa fa-quote-right"></i>{!!$userAr[0]['Phrase']!!}</li>
               @endif
               <li><a class="pure-button" onclick="toggle_visibility('json-box');">Output JSON</a></li>
             </ul>
@@ -80,7 +85,7 @@
 @stop
 {{--
 This short javascript is used to toggle the visibility of the JSON formatted
-user output. 
+user output.
 --}}
 @section('body')
 <script type="text/javascript">
