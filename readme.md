@@ -9,7 +9,7 @@ This is a Laravel application containing a collection of useful tools for web de
 
 ## Demo
 
-Coming soon!
+https://youtu.be/1l1RIx2m89A
 
 ## Details for Teaching Team
 
