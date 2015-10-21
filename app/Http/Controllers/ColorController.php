@@ -70,7 +70,7 @@ class ColorController extends Controller
         // on the page if it fails.
         $validation = Validator::make($input, $rules);
         if ($validation->fails()) {
-            $message = "Upload failed! File must be an image that is less than 3 MB. Please try again.";
+            $message = "Error! File must be an image that is less than 3 MB. Please try again.";
             return Response::make($message, 400);
         }
         //If validation successful, rename the file and move it into ./tmp directory
