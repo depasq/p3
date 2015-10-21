@@ -28,14 +28,14 @@ class LipController extends Controller
             'numGraphs' => 'numeric|max:8',
             'numSent' => 'numeric|max:8'
         ]);
-
-        $faker = Faker::create();
         $graphs=array();
-        for ($x=0; $x < $request['numGraphs']; $x++) {
-            array_push($graphs, $faker->paragraph($nb = $request['numSent']));
+        $faker = Faker::create();
+        for ($x=0; $x <= $request['numGraphs']-1; $x++) {
+              $graphs[$x] = $faker->paragraph($nbSentences = $request['numSent']);
         }
+
         // Using $_POST here to maintain user selected values after submitting
-        // the form. Otherwise reset to defaults. 
+        // the form. Otherwise reset to defaults.
         if (isset($_POST)) {
             $numGraphs = $_POST['numGraphs'];
             $numSent = $_POST['numSent'];
