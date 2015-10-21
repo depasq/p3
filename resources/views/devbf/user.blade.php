@@ -77,8 +77,7 @@
 
    </div>
    <div class="pure-u-1-1 json-box" id="json-box">
-   <pre>
-     <a name="json"> </a>
+   <pre id="json">
        {!!$json!!}
    </pre>
  </div>
