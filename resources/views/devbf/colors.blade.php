@@ -88,9 +88,8 @@ Utilize dropzone js and the custom script to handle the file upload process
             acceptedFiles: "image/*",
             uploadMultiple: false,
             addRemoveLinks: false,
-
             accept: function(file, done) {
-            },
+            }
         };
 </script>
 

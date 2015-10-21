@@ -53,7 +53,7 @@
   </div>
   <div class="pure-u-1-2">
     Learn more:<br><a class="head-link" href= {!! $data['link'] !!} target="_blank"> {!! $data['title'] !!}</a>
-    <img class="pure-img-responsive" src={!! $data['image'] !!} alt= {!! $data['source'] !!} >
+    <img class="pure-img-responsive" src={!! $data['image'] !!} alt= {!! '"'.$data['source'].'"' !!} >
   </div>
 </div>
   <div class="footer">
@@ -62,7 +62,6 @@
     generator sources the text of a randomly selected press release from the Chandra X-ray Observatory's
     <a class="head-link" href="http://chandra.si.edu" target="_blank">public website</a>.</p>
   </div>
-</div>
 </div>
 
 @stop
