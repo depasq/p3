@@ -18,9 +18,8 @@
   <p>Use this generator to create random users for testing purposes.</p>
   <a class="pure-button" href="/">Go Back</a>
   <hr class="rule"/><br>
-
   <div class="pure-g">
-    <div class="pure-u-1-3">
+    <div class="pure-u-1-1">
       Optional Includes:
       {!! Form::open(['url' => 'user', 'class' => 'pure-form pure-form-aligned'] ) !!}
            <div class="pure-control-group">
@@ -38,44 +37,48 @@
           <div class="pure-control-group">
             {!! Form::label('numUsers', 'Number of Users') !!}
             {!! Form::selectRange('numUsers', 1,5) !!}
-            <h4>Multiple users are displayed in 'Output JSON' box below</h4>
           </div>
           <div class="pure-controls">
             {!! Form::submit('Generate', ['class' => 'pure-button pure-button-primary']) !!}
+            <a href="#json" class="json pure-button" onclick="toggle_visibility('json-box');">Show JSON</a>
           </div>
             {!! Form::close() !!}
           <br/>
+
     </div>
 
-    <div class="pure-u-1-2">
-      <div class="UserBG">
-        <div class="image-cropper">
-            <img src = {!!$pic!!} width=200 alt="Headshot">
-          </div>
-            <ul class="links">
-              <li><i class="fa fa-user"></i>{!!$userAr[0]['Name']!!}
-              </li>
-              <li><i class="fa fa-envelope"></i>{!!$userAr[0]['Email']!!}
-              </li>
-              <li><i class="fa fa-home"></i>{!!$userAr[0]['Address']!!}
-              </li>
-              <li><i class="fa fa-phone"></i>{!!$userAr[0]['Phone']!!}
-              </li>
-              @if ($userAr[0]['Birthday'] != 'Null')
-                <li><i class="fa fa-birthday-cake"></i>{!!$userAr[0]['Birthday']!!}</li>
-              @endif
-              @if ($userAr[0]['Employer'] != 'Null')
-                <li><i class="fa fa-cog"></i>{!!$userAr[0]['Employer']!!}</li>
-              @endif
-              @if ($userAr[0]['Phrase'] != 'Null')
-                <li><i class="fa fa-quote-right"></i>{!!$userAr[0]['Phrase']!!}</li>
-              @endif
-              <li><a class="pure-button" onclick="toggle_visibility('json-box');">Output JSON</a></li>
-            </ul>
-     </div>
+    <div class="pure-u-1-1">
+      @for ( $i=0; $i <= count($userAr)-1; $i++  )
+        <div class="UserBG">
+          <div class="image-cropper">
+              <img id="user-pic" src = {!! 'img/lego/'.rand(0, 9).'.jpg'; !!} alt="Headshot">
+            </div>
+              <ul class="links">
+                <li><i class="fa fa-user"></i>{!!$userAr[$i]['Name']!!}
+                </li>
+                <li><i class="fa fa-envelope"></i>{!!$userAr[$i]['Email']!!}
+                </li>
+                <li><i class="fa fa-home"></i>{!!$userAr[$i]['Address']!!}
+                </li>
+                <li><i class="fa fa-phone"></i>{!!$userAr[$i]['Phone']!!}
+                </li>
+                @if ($userAr[$i]['Birthday'] != 'Null')
+                  <li><i class="fa fa-birthday-cake"></i>{!!$userAr[$i]['Birthday']!!}</li>
+                @endif
+                @if ($userAr[$i]['Employer'] != 'Null')
+                  <li><i class="fa fa-cog"></i>{!!$userAr[$i]['Employer']!!}</li>
+                @endif
+                @if ($userAr[$i]['Phrase'] != 'Null')
+                  <li><i class="fa fa-quote-right"></i>{!!$userAr[$i]['Phrase']!!}</li>
+                @endif
+              </ul>
+       </div><br/>
+      @endfor
+
    </div>
    <div class="pure-u-1-1 json-box" id="json-box">
    <pre>
+     <a name="json"> </a>
        {!!$json!!}
    </pre>
  </div>
