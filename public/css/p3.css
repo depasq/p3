@@ -137,7 +137,10 @@
 	word-wrap: break-word;
 	overflow: auto;
 }
-
+#json {
+	margin-top: -5px;
+	margin-bottom: -20px;
+}
 .bar {
 	color: #999;
 	font-size: 1.7em;

@@ -41,11 +41,11 @@ class UserController extends Controller
         #Open the page with random user already there
         #don't include any of the optional params by default
         $userAr = $this->makeUsers(1, 0, 0, 0);
-        $json_string = json_encode($userAr, JSON_PRETTY_PRINT);
+        $jsonAr = json_encode($userAr, JSON_PRETTY_PRINT);
 
         return view('devbf/user')
           ->with('userAr', $userAr)
-          ->with('json', $json_string);
+          ->with('jsonAr', $jsonAr);
     }
 
     public function postUser(Request $request)
@@ -59,11 +59,11 @@ class UserController extends Controller
             'numUsers' => 'numeric|min:1|max:5'
         ]);
 
-        $userAr = $this->makeUsers($request['numUsers'], $request['Birthday'], $request['company'], $request['phrase']);
-        $json_string = json_encode($userAr, JSON_PRETTY_PRINT);
+        $userAr = $this->makeUsers($request['numUsers'], $request['birthday'], $request['company'], $request['phrase']);
+        $jsonAr = json_encode($userAr, JSON_PRETTY_PRINT);
 
         return view('devbf/user')
           ->with('userAr', $userAr)
-          ->with('json', $json_string);
+          ->with('jsonAr', $jsonAr);
     }
 }

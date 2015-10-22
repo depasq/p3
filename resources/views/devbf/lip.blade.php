@@ -24,9 +24,10 @@
         {!! Form::label('numGraphs', 'Number of Paragraphs') !!}
         {!! Form::selectRange('numGraphs', 1,8, $numGraphs) !!}
        </div>
-        <div class="pure-control-group">
-        {!! Form::label('numSent', 'Sentences per Paragraph') !!}
-        {!! Form::selectRange('numSent', 2, 8, $numSent) !!}
+        <div class="pure-control-group size">
+        {!! Form::label('size', 'Paragraph Length') !!}
+        {{-- {!! Form::selectRange('numSent', 2, 8, $numSent) !!} --}}
+        {!! Form::select('size', array('s' => 'Short', 'm' => 'Med', 'l' => 'Long'), $size) !!}
        </div>
        <div class="pure-controls">
         {!! Form::submit('Generate Text!', ['class' => 'pure-button pure-button-primary']) !!}
@@ -47,7 +48,6 @@
               @endforeach
           </ul>
       @endif
-
       @for($i=0; $i < count($graphs); $i++)
         {!! $graphs[$i] !!}<br/><br/>
       @endfor
