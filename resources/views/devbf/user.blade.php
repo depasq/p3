@@ -54,7 +54,7 @@
               <img id="user-pic" src = {!! 'img/lego/'.rand(0, 9).'.jpg'; !!} alt="Headshot">
             </div>
               <ul class="links">
-                <li><i class="fa fa-user"></i>{!!$userAr[$i]['Name']!!}
+                <li id="tbump"><i class="fa fa-user"></i>{!!$userAr[$i]['Name']!!}
                 </li>
                 <li><i class="fa fa-envelope"></i>{!!$userAr[$i]['Email']!!}
                 </li>
@@ -69,7 +69,7 @@
                   <li><i class="fa fa-cog"></i>{!!$userAr[$i]['Employer']!!}</li>
                 @endif
                 @if ($userAr[$i]['Phrase'] != 'Null')
-                  <li><i class="fa fa-quote-right"></i>{!!$userAr[$i]['Phrase']!!}</li>
+                  <li id="bbump"><i class="fa fa-quote-right"></i>{!!$userAr[$i]['Phrase']!!}</li>
                 @endif
               </ul>
        </div><br/>
