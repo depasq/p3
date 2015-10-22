@@ -43,6 +43,8 @@ Load dropzone custom css for this view to format the dropzone box.
       --}}
       @if(count($errors) > 0)
           <h2> {!! $errors[0] !!} </h2>
+        </div>
+      </div>
       @else
               <img src= {!! $img !!} height='300' width='300' alt='Image'>
             </div>
@@ -91,5 +93,4 @@ Utilize dropzone js and the custom script to handle the file upload process
             }
         };
 </script>
-
 @stop
