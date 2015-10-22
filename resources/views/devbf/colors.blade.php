@@ -49,8 +49,7 @@ Load dropzone custom css for this view to format the dropzone box.
           </div>
          <br />
         <hr class="rule">
-        Color Palette:
-        <br/>
+        <h4>Color Palette:</h4>
         <div class="pure-g">
           <div class="pure-u-1-1">
               <div class="bar" style= {!! '"background-color: '.$colors[0].';"' !!}><br/>{!! $colors[0] !!}</div>

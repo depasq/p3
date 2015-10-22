@@ -26,7 +26,6 @@
        </div>
         <div class="pure-control-group size">
         {!! Form::label('size', 'Paragraph Length') !!}
-        {{-- {!! Form::selectRange('numSent', 2, 8, $numSent) !!} --}}
         {!! Form::select('size', array('s' => 'Short', 'm' => 'Med', 'l' => 'Long'), $size) !!}
        </div>
        <div class="pure-controls">

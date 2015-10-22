@@ -9,21 +9,25 @@ This is a Laravel application containing a collection of useful tools for web de
 
 ## Demo
 
-https://youtu.be/0iK9m9jjJtA
+https://youtu.be/jgXBEj3YcDs
 
 ## Details for Teaching Team
 
-This application uses PureCSS with additional custom formatting contained in css/p3.css
+This application uses PureCSS with additional custom formatting contained in css/p3.css.
 
 The pages of this application make use of several packages downloaded from packagist.org.
 
 The Lorem Ipsum, Random User, and Color Palette generators all use the fzaninotto/faker package.
-Additionally, the Color Palette generator uses the vitorbari/image-to-color-palette package.
+The Lorem Ipsum page also makes use of a package called zeroclipboard to provide the "copy to
+clipboard functionality". Additionally, the Color Palette generator uses the vitorbari/image-to-color-palette package to
+create the color palettes and the drag and drop file upload capability is provided by Dropzone.js
+(available on packagist at enyo/dropzone) in conjunction with css/dropzone.css to format the
+look of the upload box. Uploaded images are stored in ./tmp in the public folder. 
 
 The XKCD-style Password generator has been completely rewritten to fit into the MVC structure of a Laravel application, utilizing the flexibility of routes, views and controllers. In keeping with the separation of concerns, the view handles all display, just as in P2, while the controller handles all of the logic.  
 
-In addition to using the faker and color-palette packages, the Color Palette generator also uses Dropzone.js (available on packagist as enyo/dropzone) to handle the drag and drop upload of images, should the user choose that option over a random image.
-
+The Random User Generator includes user profile pics (of lego people) that are pulled from
+[randomuser.me](https://randomuser.me/photos)
 
 ## Outside Code
 * Pure CSS: http://yui.yahooapis.com/pure/0.5.0/pure-min.css
@@ -31,3 +35,4 @@ In addition to using the faker and color-palette packages, the Color Palette gen
 * [Dropzone.js](https://packagist.org/packages/enyo/dropzone)
 * [fzaninotto/faker](https://packagist.org/packages/fzaninotto/faker)
 * [vitorbari/image-to-color-palette](https://packagist.org/packages/vitorbari/image-to-color-palette)
+* [zeroclipboard/zeroclipboard](https://packagist.org/packages/zeroclipboard/zeroclipboard)
