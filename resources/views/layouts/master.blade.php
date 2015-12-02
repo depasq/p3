@@ -42,9 +42,9 @@
               <li class="pure-menu-item ghub"><a href="https://github.com/depasq/p3" target="_blank" class="pure-menu-link">GitHub</a></li>
             </ul>
           </li>
-          <li class="pure-menu-item"><a href="#" class="pure-menu-link">Project 4</a>
+          <li class="pure-menu-item"><a href="http://p4.dwa15.jdepasquale.com/" class="pure-menu-link">Project 4</a>
             <ul class="pure-menu-children">
-              <li class="pure-menu-item ghub"><a href="https://github.com/depasq" target="_blank" class="pure-menu-link">GitHub</a></li>
+              <li class="pure-menu-item ghub"><a href="https://github.com/depasq/p4" target="_blank" class="pure-menu-link">GitHub</a></li>
             </ul>
           </li>
         </ul>
